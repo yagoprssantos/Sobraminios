@@ -56,35 +56,3 @@ A equipe é composta por estudantes da Turma A da disciplina de Programação We
   <a href="https://github.com/yagoprssantos"><img src="https://img.shields.io/badge/GitHub-yagoprssantos-blue?style=flat-squared&logo=github" alt="GitHub"></a>
 
 </div>
-
-## Cronograma base
-
-### Fase 1: Planejamento (1 semana)
-
-- Definir escopo do projeto e requisitos.
-- Designar responsabilidades dentro de cada grupo.
-- Criar um plano de desenvolvimento detalhado.
-
-### Fase 2: Desenvolvimento (4 semanas)
-
-- Desenvolver a camada Model (no Padrão DAO) para gerenciamento de dados.
-- Criar a camada View final (no Padrão HTML/CSS/JavaScript) para a interface do usuário.
-- Implementar a camada Controller (em Python/Flask) para a lógica de negócios.
-- Desenvolver funcionalidades de registro e gerenciamento de ocorrências.
-- Integrar anexação de fotos e vídeos.
-- Implementar recursos de pesquisa e visualização de ocorrências.
-- Desenvolver exportação de ocorrências para Excel.
-
-### Fase 3: Testes (1 semana)
-
-- Realizar testes de unidade e integração em cada componente.
-- Testar a aplicação com dados de teste real.
-- Corrigir e otimizar o código conforme necessário.
-
-### Fase 4: Apresentação (1 semana)
-
-- Preparar a apresentação do projeto para avaliação do coordenador do curso.
-- Refinar a documentação e preparar os slides.
-
-
-Além disso, a aplicação oferece funcionalidades para visualizar as ocorrências com base em diferentes critérios, como tipo, área, localização em mapas e horário. Também é possível exportar dados de ocorrências para um formato Excel, associando-as aos órgãos governamentais responsáveis por cada tipo de ocorrência.
