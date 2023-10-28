@@ -14,7 +14,7 @@ O projeto é organizado em várias partes distintas, que incluem:
 
 1. [Plano de Projeto](): Documento que descreve a visão, escopo e estratégia do projeto, além dos papéis de cada integrante.
 
-2. [Modelo de Dados](): Desenvolvido no Workbench, representa a estrutura do banco de dados utilizado pelo sistema.
+2. [Modelo de Dados](): Desenvolvido no MySQL Workbench, representa a estrutura do banco de dados utilizado pelo sistema.
 
 3. [Base de Dados com Dados para Testes Reais](): Inclui um backup do banco de dados (.sql) com dados de teste real para a aplicação.
 
@@ -63,7 +63,7 @@ A equipe é composta por estudantes da Turma A da disciplina de Programação We
 - Designar responsabilidades dentro de cada grupo.
 - Criar um plano de desenvolvimento detalhado.
 
-### Fase 2: Desenvolvimento (4 semana)
+### Fase 2: Desenvolvimento (4 semanas)
 
 - Desenvolver a camada Model (no Padrão DAO) para gerenciamento de dados.
 - Criar a camada View final (no Padrão HTML/CSS/JavaScript) para a interface do usuário.
