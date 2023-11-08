@@ -20,6 +20,8 @@ CREATE TABLE orgaos_governamentais (
   `nome` VARCHAR(100),
   `estado` CHAR(2) NOT NULL,
   `tipo` ENUM('municipal', 'estadual', 'federal') NOT NULL
+  `email` VARCHAR(50) NOT NULL,
+  `senha` VARCHAR(50) NOT NULL,
 );
 
 
