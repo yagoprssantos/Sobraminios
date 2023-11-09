@@ -19,9 +19,9 @@ CREATE TABLE orgaos_governamentais (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `nome` VARCHAR(100),
   `estado` CHAR(2) NOT NULL,
-  `tipo` ENUM('municipal', 'estadual', 'federal') NOT NULL
+  `tipo` ENUM('municipal', 'estadual', 'federal') NOT NULL,
   `email` VARCHAR(50) NOT NULL,
-  `senha` VARCHAR(50) NOT NULL,
+  `senha` VARCHAR(50) NOT NULL
 );
 
 
@@ -35,19 +35,19 @@ CREATE TABLE ocorrencia (
  `status` ENUM('ocorrência resolvida', 'ocorrência em resolução', 'ocorrência não resolvida') NOT NULL,
  `usuario_id_fk` INT NOT NULL,
  `orgao_id_fk` INT NOT NULL,
- FOREIGN KEY (usuario_id_fk) REFERENCES usuario(id)
- FOREIGN KEY (orgao_id_fk) REFERENCES orgaos_governamentais(id)
+ `anexo_id_fk` INT NOT NULL,
+ FOREIGN KEY (usuario_id_fk) REFERENCES usuario(id),
+ FOREIGN KEY (orgao_id_fk) REFERENCES orgaos_governamentais(id),
+ FOREIGN KEY (ocorrencia_id_fk) REFERENCES ocorrencia(id)
 );
 
 
 -- Tabela de Anexos (Fotos e Vídeos)
 CREATE TABLE anexo (
  `id` INT PRIMARY KEY,
- `ocorrencia_id_fk` INT,
  `caminho` VARCHAR(255) NOT NULL,
  `tipo` ENUM('foto', 'video') NOT NULL,
-  dado BLOB, -- Armazena a mídia como dados binários
-  FOREIGN KEY (ocorrencia_id_fk) REFERENCES ocorrencia(id)
+  dado BLOB -- Armazena a mídia como dados binários
 );
 
 -- Tabela de Comentários
