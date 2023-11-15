@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS `ocorrencias_db` DEFAULT CHARACTER SET utf8;
 USE `ocorrencias_db`;
 
 -- Tabela de Usuários
-create table `usuario`(
+create table `tb_usuario`(
  `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
  `cpf_usuario` VARCHAR(11) NOT NULL UNIQUE,
  `nome_usuario` VARCHAR(150) NOT NULL,
@@ -15,7 +15,7 @@ create table `usuario`(
 );
 
 -- Tabela de Órgãos Governamentais
-CREATE TABLE orgaos_governamentais (
+CREATE TABLE tb_orgaos_governamentais (
   `id_orgaos_governamentais` INT AUTO_INCREMENT PRIMARY KEY,
   `nome_orgaos_governamentais` VARCHAR(100),
   `estado_orgaos_governamentais` CHAR(2) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE orgaos_governamentais (
 
 
 -- Tabela de Ocorrências
-CREATE TABLE ocorrencia (
+CREATE TABLE tb_ocorrencia (
  `id_ocorrencia` INT AUTO_INCREMENT PRIMARY KEY,
  `tipo_ocorrencia` ENUM('lixo', 'buraco em pista', 'assalto', 'bueiro sem proteção', 'placa danificada', 'banco danificado', 'calçada danificada', 'outros') NOT NULL,
  `descricao_ocorrencia` TEXT NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE ocorrencia (
 
 
 -- Tabela de Anexos (Fotos e Vídeos)
-CREATE TABLE anexo (
+CREATE TABLE tb_anexo (
  `id_anexo` INT PRIMARY KEY,
  `caminho_anexo` VARCHAR(255) NOT NULL,
  `tipo_anexo` ENUM('foto', 'video') NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE anexo (
 );
 
 -- Tabela de Comentários
-CREATE TABLE `comentarios` (
+CREATE TABLE `tb_comentarios` (
   `id_comentarios` INT AUTO_INCREMENT PRIMARY KEY,
   `ocorrencia_id_fk` INT NOT NULL,
   `usuario_id_fk` INT NOT NULL,
