@@ -9,13 +9,13 @@ CREATE TABLE tb_condominio (
  `qtd_moradores` INT NOT NULL,
  `cep_condominio` VARCHAR(8) NOT NULL,
  `endereco_condominio` VARCHAR(150) NOT NULL,
- `id_administrador_fk` INT NOT NULL,
-  FOREIGN KEY (id_administrador_fk) REFERENCES usuario(id_usuario)
+ `administrador_id_fk` INT NOT NULL,
+  FOREIGN KEY (id_administrador_fk) REFERENCES tb_administrador(id_administrador)
 );
 
 
 -- Tabela de Usuários
-create table `tb_usuario`(
+create table tb_usuario (
  `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
  `cpf_usuario` VARCHAR(11) NOT NULL UNIQUE,
  `nome_usuario` VARCHAR(150) NOT NULL,
@@ -23,22 +23,20 @@ create table `tb_usuario`(
  `senha_usuario` VARCHAR(90) NOT NULL,
  `cep_usuario` VARCHAR(150) NOT NULL,
  `telefone_usuario` VARCHAR(11) NOT NULL,
- `tipo_usuario` ENUM('morador', 'administração') NOT NULL,
  `condominio_id_fk` INT NOT NULL,
-  FOREIGN KEY (condominio_id_fk) REFERENCES condominio(id_condominio)
+  FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio)
 );
 
 
--- Criar tabela de adm?
 -- Tabela de Administradores
 CREATE TABLE tb_administrador (
  `id_administrador` VARCHAR(100) NOT NULL,
- `email_administrador` INT AUTO_INCREMENT PRIMARY KEY,
  `nome_administrador` VARCHAR(50) NOT NULL,
+ `email_administrador` INT AUTO_INCREMENT PRIMARY KEY,
  `senha_administrador` VARCHAR(50) NOT NULL,
  `telefone_administrador` VARCHAR(11) NOT NULL,
- `condominio_id_fk` INT NOT NULL,
-  FOREIGN KEY (condominio_id_fk) REFERENCES condominio(id_condominio)
+ `trabalha_condominio_id_fk` INT NOT NULL,
+  FOREIGN KEY (trabalha_condominio_id_fk) REFERENCES tb_condominio(id_condominio)
 );
 
 
@@ -54,9 +52,9 @@ CREATE TABLE tb_ocorrencia (
  `usuario_id_fk` INT NOT NULL,
  `condominio_id_fk` INT NOT NULL,
  `anexo_id_fk` INT NOT NULL,
- FOREIGN KEY (usuario_id_fk) REFERENCES usuario(id_usuario),
- FOREIGN KEY (condominio_id_fk) REFERENCES condominio(id_condominio),
- FOREIGN KEY (ocorrencia_id_fk) REFERENCES ocorrencia(id)
+ FOREIGN KEY (usuario_id_fk) REFERENCES tb_usuario(id_usuario),
+ FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio),
+ FOREIGN KEY (anexo_id_fk) REFERENCES tb_anexo(id_anexo)
 );
 
 
@@ -70,7 +68,7 @@ CREATE TABLE tb_anexo (
 
 
 -- Tabela de Comentários
-CREATE TABLE `tb_comentarios` (
+CREATE TABLE tb_comentarios (
   `id_comentarios` INT AUTO_INCREMENT PRIMARY KEY,
   `comentario` TEXT NOT NULL,
   `data_comentarios` DATE NOT NULL,
