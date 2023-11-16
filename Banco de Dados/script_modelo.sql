@@ -1,6 +1,16 @@
 -- Criação do Banco de Dados
-CREATE DATABASE IF NOT EXISTS `ocorrencias_db` DEFAULT CHARACTER SET utf8;
-USE `ocorrencias_db`;
+CREATE DATABASE IF NOT EXISTS `condominio_ocorrencias_db` DEFAULT CHARACTER SET utf8;
+USE `condominio_ocorrencias_db`;
+
+-- Tabela de Condomínios
+CREATE TABLE tb_condominio (
+ `id_condominio` INT AUTO_INCREMENT PRIMARY KEY,
+ `nome_condominio` VARCHAR(100) NOT NULL,
+ `qtd_apartamentos` INT NOT NULL,
+ `cep_condominio` VARCHAR(8) NOT NULL,
+ `endereco_condominio` VARCHAR(150) NOT NULL
+);
+
 
 -- Tabela de Usuários
 create table `tb_usuario`(
@@ -11,8 +21,10 @@ create table `tb_usuario`(
  `senha_usuario` VARCHAR(90) NOT NULL,
  `endereco_usuario` VARCHAR(150),
  `telefone_usuario` VARCHAR(11) NOT NULL,
- `cep_usuario` VARCHAR(8) NOT NULL
+ `condominio_id_fk` INT NOT NULL,
+  FOREIGN KEY (condominio_id_fk) REFERENCES condominio(id_condominio)
 );
+
 
 -- Tabela de Órgãos Governamentais
 CREATE TABLE tb_orgaos_governamentais (
@@ -34,9 +46,11 @@ CREATE TABLE tb_ocorrencia (
  `data_ocorrencia` DATETIME NOT NULL,
  `status_ocorrencia` ENUM('ocorrência resolvida', 'ocorrência em resolução', 'ocorrência não resolvida') NOT NULL,
  `usuario_id_fk` INT NOT NULL,
+ `condominio_id_fk` INT NOT NULL,
  `orgao_id_fk` INT NOT NULL,
  `anexo_id_fk` INT NOT NULL,
  FOREIGN KEY (usuario_id_fk) REFERENCES usuario(id_usuario),
+ FOREIGN KEY (condominio_id_fk) REFERENCES condominio(id_condominio),
  FOREIGN KEY (orgao_id_fk) REFERENCES orgaos_governamentais(id_orgaos_governamentais),
  FOREIGN KEY (ocorrencia_id_fk) REFERENCES ocorrencia(id)
 );
@@ -50,15 +64,16 @@ CREATE TABLE tb_anexo (
   dado BLOB -- Armazena a mídia como dados binários
 );
 
+
 -- Tabela de Comentários
 CREATE TABLE `tb_comentarios` (
   `id_comentarios` INT AUTO_INCREMENT PRIMARY KEY,
-  `ocorrencia_id_fk` INT NOT NULL,
-  `usuario_id_fk` INT NOT NULL,
   `comentario` TEXT NOT NULL,
   `data_comentarios` DATE NOT NULL,
   `horario_comentarios` DATETIME NOT NULL,
-  FOREIGN KEY (`ocorrencia_id_fk`) REFERENCES `ocorrencias` (`id_ocorrencias`),
-  FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuarios` (`id_usuarios`)
+  `usuario_id_fk` INT NOT NULL,
+  `ocorrencia_id_fk` INT NOT NULL,
+  FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuarios` (`id_usuarios`),
+  FOREIGN KEY (`ocorrencia_id_fk`) REFERENCES `ocorrencias` (`id_ocorrencias`)
 );
 
