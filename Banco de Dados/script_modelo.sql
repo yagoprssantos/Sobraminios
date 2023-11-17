@@ -6,7 +6,6 @@ USE `condominio_ocorrencias_db`;
 CREATE TABLE tb_condominio (
  `id_condominio` INT AUTO_INCREMENT PRIMARY KEY,
  `nome_condominio` VARCHAR(100) NOT NULL,
- `qtd_moradores` INT NOT NULL,
  `cep_condominio` VARCHAR(8) NOT NULL,
  `endereco_condominio` VARCHAR(150) NOT NULL,
  `administrador_id_fk` INT NOT NULL,
@@ -23,20 +22,9 @@ create table tb_usuario (
  `senha_usuario` VARCHAR(90) NOT NULL,
  `cep_usuario` VARCHAR(150) NOT NULL,
  `telefone_usuario` VARCHAR(11) NOT NULL,
+ `tipo_usuario` ENUM('morador', 'visitante', 'administrador') NOT NULL,
  `condominio_id_fk` INT NOT NULL,
   FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio)
-);
-
-
--- Tabela de Administradores
-CREATE TABLE tb_administrador (
- `id_administrador` VARCHAR(100) NOT NULL,
- `nome_administrador` VARCHAR(50) NOT NULL,
- `email_administrador` INT AUTO_INCREMENT PRIMARY KEY,
- `senha_administrador` VARCHAR(50) NOT NULL,
- `telefone_administrador` VARCHAR(11) NOT NULL,
- `trabalha_condominio_id_fk` INT NOT NULL,
-  FOREIGN KEY (trabalha_condominio_id_fk) REFERENCES tb_condominio(id_condominio)
 );
 
 
@@ -51,10 +39,8 @@ CREATE TABLE tb_ocorrencia (
  `aprovacao_ocorrencia` INT NOT NULL,
  `usuario_id_fk` INT NOT NULL,
  `condominio_id_fk` INT NOT NULL,
- `anexo_id_fk` INT NOT NULL,
  FOREIGN KEY (usuario_id_fk) REFERENCES tb_usuario(id_usuario),
  FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio),
- FOREIGN KEY (anexo_id_fk) REFERENCES tb_anexo(id_anexo)
 );
 
 
@@ -63,7 +49,10 @@ CREATE TABLE tb_anexo (
  `id_anexo` INT PRIMARY KEY,
  `caminho_anexo` VARCHAR(255) NOT NULL,
  `tipo_anexo` ENUM('foto', 'video') NOT NULL,
-  dado BLOB -- Armazena a mídia como dados binários
+  dado BLOB, -- Armazena a mídia como dados binários
+  `ocorrencia_id_fk` INT NOT NULL,
+  FOREIGN KEY (ocorrencia_id_fk) REFERENCES tb_ocorrencia(id_ocorrencia)
+
 );
 
 
