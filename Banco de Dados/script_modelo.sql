@@ -7,9 +7,7 @@ CREATE TABLE tb_condominio (
  `id_condominio` INT AUTO_INCREMENT PRIMARY KEY,
  `nome_condominio` VARCHAR(100) NOT NULL,
  `cep_condominio` VARCHAR(8) NOT NULL,
- `endereco_condominio` VARCHAR(150) NOT NULL,
- `administrador_id_fk` INT NOT NULL,
-  FOREIGN KEY (id_administrador_fk) REFERENCES tb_administrador(id_administrador)
+ `endereco_condominio` VARCHAR(150) NOT NULL
 );
 
 
@@ -25,6 +23,16 @@ create table tb_usuario (
  `tipo_usuario` ENUM('morador', 'visitante', 'administrador') NOT NULL,
  `condominio_id_fk` INT NOT NULL,
   FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio)
+);
+
+
+-- Tabela de Administradores dos Condomínios
+CREATE TABLE tb_condominio_administrador (
+ `id_condominio` INT,
+ `id_administrador` INT,
+ PRIMARY KEY (`id_condominio`, `id_administrador`),
+ FOREIGN KEY (`id_condominio`) REFERENCES tb_condominio(`id_condominio`),
+ FOREIGN KEY (`id_administrador`) REFERENCES tb_usuario(`id_usuario`)
 );
 
 
