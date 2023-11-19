@@ -18,11 +18,11 @@ create table tb_usuario (
  `nome_usuario` VARCHAR(150) NOT NULL,
  `email_usuario` VARCHAR(90) NOT NULL,
  `senha_usuario` VARCHAR(90) NOT NULL,
- `cep_usuario` VARCHAR(150) NOT NULL,
- `telefone_usuario` VARCHAR(11) NOT NULL,
+ `cep_usuario` VARCHAR(10) NOT NULL,
+ `telefone_usuario` VARCHAR(14) NOT NULL,
  `tipo_usuario` ENUM('morador', 'visitante', 'administrador') NOT NULL,
  `condominio_id_fk` INT NOT NULL,
-  FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio)
+  FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(`id_condominio`)
 );
 
 
@@ -47,8 +47,8 @@ CREATE TABLE tb_ocorrencia (
  `aprovacao_ocorrencia` INT NOT NULL,
  `usuario_id_fk` INT NOT NULL,
  `condominio_id_fk` INT NOT NULL,
- FOREIGN KEY (usuario_id_fk) REFERENCES tb_usuario(id_usuario),
- FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(id_condominio),
+ FOREIGN KEY (`usuario_id_fk`) REFERENCES tb_usuario(`id_usuario`),
+ FOREIGN KEY (`condominio_id_fk`) REFERENCES tb_condominio(`id_condominio`)
 );
 
 
@@ -57,9 +57,9 @@ CREATE TABLE tb_anexo (
  `id_anexo` INT PRIMARY KEY,
  `caminho_anexo` VARCHAR(255) NOT NULL,
  `tipo_anexo` ENUM('foto', 'video') NOT NULL,
-  dado BLOB, -- Armazena a mídia como dados binários
-  `ocorrencia_id_fk` INT NOT NULL,
-  FOREIGN KEY (ocorrencia_id_fk) REFERENCES tb_ocorrencia(id_ocorrencia)
+ `dado` BLOB, -- Armazena a mídia como dados binários
+ `ocorrencia_id_fk` INT NOT NULL,
+  FOREIGN KEY (ocorrencia_id_fk) REFERENCES tb_ocorrencia(`id_ocorrencia`)
 
 );
 
@@ -72,7 +72,6 @@ CREATE TABLE tb_comentarios (
   `horario_comentarios` DATETIME NOT NULL,
   `usuario_id_fk` INT NOT NULL,
   `ocorrencia_id_fk` INT NOT NULL,
-  FOREIGN KEY (`usuario_id_fk`) REFERENCES `usuarios` (`id_usuarios`),
-  FOREIGN KEY (`ocorrencia_id_fk`) REFERENCES `ocorrencias` (`id_ocorrencias`)
+  FOREIGN KEY (`usuario_id_fk`) REFERENCES `tb_usuario` (`id_usuario`),
+  FOREIGN KEY (`ocorrencia_id_fk`) REFERENCES `tb_ocorrencia` (`id_ocorrencia`)
 );
-
