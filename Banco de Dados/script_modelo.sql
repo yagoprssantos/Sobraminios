@@ -65,11 +65,10 @@ CREATE TABLE tb_anexo (
 
 
 -- Tabela de Comentários
-CREATE TABLE tb_comentarios (
-  `id_comentarios` INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE tb_comentario (
+  `id_comentario` INT AUTO_INCREMENT PRIMARY KEY,
   `comentario` TEXT NOT NULL,
-  `data_comentarios` DATE NOT NULL,
-  `horario_comentarios` DATETIME NOT NULL,
+  `data_comentario` DATETIME NOT NULL,
   `usuario_id_fk` INT NOT NULL,
   `ocorrencia_id_fk` INT NOT NULL,
   FOREIGN KEY (`usuario_id_fk`) REFERENCES `tb_usuario` (`id_usuario`),
