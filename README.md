@@ -51,7 +51,7 @@ A equipe é composta por estudantes da Turma A da disciplina de Programação We
   <a href="https://github.com/username"><img src="https://img.shields.io/badge/GitHub-username-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   -->
   
- <a href="https://github.com/apenasgabriela"><img src="https://img.shields.io/badge/GitHub-apenasgabriela-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+ <a href="https://github.com/apenasgabi"><img src="https://img.shields.io/badge/GitHub-apenasgabi-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/brunnaruass"><img src="https://img.shields.io/badge/GitHub-brunnaruass-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-GabrielMousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a> <br>
   <a href="https://github.com/Joaopato1"><img src="https://img.shields.io/badge/GitHub-Joaopato1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
