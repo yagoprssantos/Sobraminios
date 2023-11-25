@@ -1,9 +1,9 @@
-INSERT INTO tb_condominio (nome_condominio, cep_condominio, endereco_condominio) VALUES
-('Condomínio Nova Colina', '73270705', 'SH Nova Colina - Sobradinho, Brasília - DF'),
-('Condomínio Alto da Boa Vista', '73130900', 'Cond. Nova Colina I S/N, cj. A - Sobradinho - DF'),
-('Condomínio Vivendas Lago Azul', '73105908', 'SHDB QL 14 Conjunto 1 - Lago Azul, Brasília - DF'),
-('Condomínio Jardim Europa II', '73105904', 'Rodovia DF-150 Km 3,5 - Sobradinho, Brasília - DF'),
-('Condomínio Meus Sonhos', '73090901', 'Rodovia BR-020, km 12,5 - Sobradinho, Brasília - DF');
+INSERT INTO tb_condominio (nome_condominio, cep_condominio, endereco_condominio, lat_condominio, long_condominio) VALUES
+('Condomínio Nova Colina', '73270705', 'SH Nova Colina - Sobradinho, Brasília - DF', -15.649806, -47.754766),
+('Condomínio Alto da Boa Vista', '73130900', 'Cond. Nova Colina I S/N, cj. A - Sobradinho - DF', -15.626168, -47.769833),
+('Condomínio Vivendas Lago Azul', '73105908', 'SHDB QL 14 Conjunto 1 - Lago Azul, Brasília - DF', -15.659708, -47.856989),
+('Condomínio Jardim Europa II', '73105904', 'Rodovia DF-150 Km 3,5 - Sobradinho, Brasília - DF', -15.669999, -47.848757),
+('Condomínio Meus Sonhos', '73090901', 'Rodovia BR-020, km 12,5 - Sobradinho, Brasília - DF', -15.665242, -47.839802);
 
 
 INSERT INTO tb_usuario (cpf_usuario, nome_usuario, email_usuario, senha_usuario, cep_usuario, telefone_usuario, tipo_usuario, condominio_id_fk) VALUES 

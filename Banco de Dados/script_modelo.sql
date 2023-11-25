@@ -7,7 +7,9 @@ CREATE TABLE tb_condominio (
  `id_condominio` INT AUTO_INCREMENT PRIMARY KEY,
  `nome_condominio` VARCHAR(100) NOT NULL,
  `cep_condominio` VARCHAR(8) NOT NULL,
- `endereco_condominio` VARCHAR(150) NOT NULL
+ `endereco_condominio` VARCHAR(150) NOT NULL,
+ `lat_condominio` DECIMAL(8,6),
+ `long_condominio` DECIMAL(8,6)
 );
 
 
