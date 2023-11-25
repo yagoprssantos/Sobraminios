@@ -8,8 +8,8 @@ CREATE TABLE tb_condominio (
  `nome_condominio` VARCHAR(100) NOT NULL,
  `cep_condominio` VARCHAR(8) NOT NULL,
  `endereco_condominio` VARCHAR(150) NOT NULL,
- `lat_condominio` DECIMAL(9,6),
- `long_condominio` DECIMAL(9,6)
+ `lat_condominio` DECIMAL(8,6),
+ `long_condominio` DECIMAL(8,6)
 );
 
 
