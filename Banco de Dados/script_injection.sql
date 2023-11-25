@@ -2018,6 +2018,19 @@ INSERT INTO tb_usuario (cpf_usuario, nome_usuario, email_usuario, senha_usuario,
 ('43536160917', 'Charissa Retallick', 'cretallickrr@google.ca', '12nv237a66d5', '81198-432', '(61)94545-1744', 'morador', 3);
 
 
+INSERT INTO tb_condominio_administrador (id_condominio, id_administrador) VALUES
+(3, 1),
+(3, 2),
+(1, 3),
+(4, 4),
+(3, 5),
+(3, 6),
+(5, 7),
+(2, 8),
+(1, 9),
+(4, 10);
+
+
 INSERT INTO tb_ocorrencia (tipo_ocorrencia, descricao_ocorrencia, localizacao_ocorrencia, data_ocorrencia, status_ocorrencia, aprovacao_ocorrencia, usuario_id_fk, condominio_id_fk) VALUES
  ('Ruidos Excessivos', 'Houve relatos de comportamento perturbador na área das Quadra Esportivas', 'Rua Y', '2023-04-28 10:41:13', 'ocorrência em resolução', 34, 410, 2),
  ('Comportamento Pertubador', 'Houve relatos de comportamento perturbador na área do Comercio', 'Rua B', '2023-10-03 19:42:13', 'ocorrência resolvida', 52, 1009, 5),
