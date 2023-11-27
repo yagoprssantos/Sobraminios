@@ -41,7 +41,7 @@ CREATE TABLE tb_condominio_administrador (
 -- Tabela de Ocorrências
 CREATE TABLE tb_ocorrencia (
  `id_ocorrencia` INT AUTO_INCREMENT PRIMARY KEY,
- `tipo_ocorrencia` ENUM('lixo', 'buraco em pista', 'assalto', 'bueiro sem proteção', 'placa danificada', 'banco danificado', 'calçada danificada', 'outros') NOT NULL,
+ `tipo_ocorrencia` ENUM('Vazamento de Agua''alha Eletrica','Vandalismo','Furtos ou Roubos','Ruidos Excessivos','Comportamento Pertubador','Reparos Estruturais','Velocidade Excessiva','Estacionamento Inadequado','Caes Soltos','Limpeza Relacionada a Animais') NOT NULL,
  `descricao_ocorrencia` VARCHAR(255) NOT NULL,
  `localizacao_ocorrencia` VARCHAR(75) NOT NULL,
  `data_ocorrencia` DATETIME NOT NULL,
