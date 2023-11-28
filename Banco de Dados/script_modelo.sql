@@ -56,7 +56,7 @@ CREATE TABLE tb_ocorrencia (
 
 -- Tabela de Anexos (Fotos e Vídeos)
 CREATE TABLE tb_anexo (
- `id_anexo` INT PRIMARY KEY,
+ `id_anexo` INT AUTO_INCREMENT PRIMARY KEY,
  `caminho_anexo` VARCHAR(255) NOT NULL,
  `tipo_anexo` ENUM('foto', 'video') NOT NULL,
  `dado` BLOB, -- Armazena a mídia como dados binários
