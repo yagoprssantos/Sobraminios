@@ -101,6 +101,8 @@ def pesquisar():
        })
 
 # **** PARTE AINDA NÃO INICIADA/REVISAR DAQUI PARA BAIXO****
+
+# inserir novo usuário (cadastro de login)
 @app.route('/inserir', methods=['PUT'])
 @login_required
 def inserir():
@@ -124,7 +126,7 @@ def inserir():
        'idt_pessoa': objPes.idt_pessoa
    })
 
-
+# apagar conta de usupario
 @app.route('/apagar', methods=['DELETE'])
 @login_required
 def apagar():

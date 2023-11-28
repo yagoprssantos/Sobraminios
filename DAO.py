@@ -6,7 +6,7 @@ class DAO:
 
    def __init__(self, tab):
        # Ligação com o esquema de banco de dados
-       engine = create_engine("mysql+mysqlconnector://root:uniceub@localhost/bdbs?charset=utf8mb4")
+       engine = create_engine("mysql+mysqlconnector://root:uniceub@localhost/bdbs?charset=utf8mb4") # arrumar com um endereço do nosso grupo
 
        # Mapeamento Objeto Relacional com o SQLAlchemy
        db = automap_base()
@@ -35,7 +35,7 @@ class DAO:
        return lista
 
    def readById(self, id):
-       exp = "self.tabela." + self.idt + "==id"
+       exp = "self.tabela." + self.id + "==id"
        obj = self.ses.query(self.tabela).filter(eval(exp)).first()
        return obj
 
@@ -73,7 +73,7 @@ def main():
    for g in lista:
        print(g.id_condominio, g.nome_condominio)
 
-   obj = dao.readById(83)
+   obj = dao.readById(5)
 
    print("-->", obj.id_condominio, obj.nome_condominio)
 
