@@ -41,7 +41,7 @@ CREATE TABLE tb_condominio_administrador (
 -- Tabela de Ocorrências
 CREATE TABLE tb_ocorrencia (
  `id_ocorrencia` INT AUTO_INCREMENT PRIMARY KEY,
- `tipo_ocorrencia` ENUM('lixo', 'buraco em pista', 'assalto', 'bueiro sem proteção', 'placa danificada', 'banco danificado', 'calçada danificada', 'outros') NOT NULL,
+ `tipo_ocorrencia` ENUM('Vazamento de Agua','Falha Eletrica','Vandalismo','Furtos ou Roubos','Ruidos Excessivos','Comportamento Pertubador','Reparos Estruturais','Velocidade Excessiva','Estacionamento Inadequado','Caes Soltos','Limpeza Relacionada a Animais') NOT NULL,
  `descricao_ocorrencia` VARCHAR(255) NOT NULL,
  `localizacao_ocorrencia` VARCHAR(75) NOT NULL,
  `data_ocorrencia` DATETIME NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE tb_ocorrencia (
 
 -- Tabela de Anexos (Fotos e Vídeos)
 CREATE TABLE tb_anexo (
- `id_anexo` INT PRIMARY KEY,
+ `id_anexo` INT AUTO_INCREMENT PRIMARY KEY,
  `caminho_anexo` VARCHAR(255) NOT NULL,
  `tipo_anexo` ENUM('foto', 'video') NOT NULL,
  `dado` BLOB, -- Armazena a mídia como dados binários
