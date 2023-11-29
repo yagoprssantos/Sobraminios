@@ -14,9 +14,8 @@ CREATE TABLE tb_condominio (
 
 
 -- Tabela de Usuários
-create table tb_usuario (
- `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
- `cpf_usuario` VARCHAR(11) NOT NULL UNIQUE,
+CREATE TABLE tb_usuario (
+ `cpf_usuario` VARCHAR(11) NOT NULL,
  `nome_usuario` VARCHAR(150) NOT NULL,
  `email_usuario` VARCHAR(90) NOT NULL,
  `senha_usuario` VARCHAR(90) NOT NULL,
@@ -24,6 +23,7 @@ create table tb_usuario (
  `telefone_usuario` VARCHAR(14) NOT NULL,
  `tipo_usuario` ENUM('morador', 'visitante', 'administrador') NOT NULL,
  `condominio_id_fk` INT NOT NULL,
+  PRIMARY KEY (`cpf_usuario`, `condominio_id_fk`),
   FOREIGN KEY (condominio_id_fk) REFERENCES tb_condominio(`id_condominio`)
 );
 
@@ -31,10 +31,10 @@ create table tb_usuario (
 -- Tabela de Administradores dos Condomínios
 CREATE TABLE tb_condominio_administrador (
  `id_condominio` INT,
- `id_administrador` INT,
- PRIMARY KEY (`id_condominio`, `id_administrador`),
+ `cpf_administrador` VARCHAR(11),
+ PRIMARY KEY (`id_condominio`, `cpf_administrador`),
  FOREIGN KEY (`id_condominio`) REFERENCES tb_condominio(`id_condominio`),
- FOREIGN KEY (`id_administrador`) REFERENCES tb_usuario(`id_usuario`)
+ FOREIGN KEY (`cpf_administrador`) REFERENCES tb_usuario(`cpf_usuario`)
 );
 
 
@@ -47,9 +47,9 @@ CREATE TABLE tb_ocorrencia (
  `data_ocorrencia` DATETIME NOT NULL,
  `status_ocorrencia` ENUM('ocorrência resolvida', 'ocorrência em resolução', 'ocorrência não resolvida') NOT NULL,
  `aprovacao_ocorrencia` INT NOT NULL,
- `usuario_id_fk` INT NOT NULL,
+ `usuario_cpf_fk` VARCHAR(11) NOT NULL,
  `condominio_id_fk` INT NOT NULL,
- FOREIGN KEY (`usuario_id_fk`) REFERENCES tb_usuario(`id_usuario`),
+ FOREIGN KEY (`usuario_cpf_fk`) REFERENCES tb_usuario(`cpf_usuario`),
  FOREIGN KEY (`condominio_id_fk`) REFERENCES tb_condominio(`id_condominio`)
 );
 
@@ -71,8 +71,8 @@ CREATE TABLE tb_comentario (
   `id_comentario` INT AUTO_INCREMENT PRIMARY KEY,
   `comentario` TEXT NOT NULL,
   `data_comentario` DATETIME NOT NULL,
-  `usuario_id_fk` INT NOT NULL,
+  `usuario_cpf_fk` VARCHAR(11) NOT NULL,
   `ocorrencia_id_fk` INT NOT NULL,
-  FOREIGN KEY (`usuario_id_fk`) REFERENCES `tb_usuario` (`id_usuario`),
+  FOREIGN KEY (`usuario_cpf_fk`) REFERENCES `tb_usuario` (`cpf_usuario`),
   FOREIGN KEY (`ocorrencia_id_fk`) REFERENCES `tb_ocorrencia` (`id_ocorrencia`)
 );
