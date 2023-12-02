@@ -1,61 +1,47 @@
 # Projeto Final - Sistema de Registro de Ocorrências
 
-<!-- É só uma base, não é pra fazer muuuuito sentido, então alterem como quiser -->
+<!-- Banner da Sobramínios (imagem a ser adicionada em breve) -->
 
 ## Visão Geral
-
-Este repositório GitHub contém o projeto final da disciplina de Programação Web, ministrada pelo professor Gilberto Hiragi. O projeto se concentra no desenvolvimento de um sistema web para o registro e gerenciamento de ocorrências públicas.
+O projeto consiste em um sistema web funcional para registrar ocorrências em condomínios de Sobradinho-DF. Desenvolvido com Python, Flask, HTML, CSS, JavaScript e MySQL.
 
 ## Estrutura do Projeto
+O projeto é composto por várias seções:
 
-O projeto é organizado em várias partes distintas, que incluem:
+1. [Plano de Projeto](): Visão, escopo e estratégia do projeto, além dos papéis dos membros.
+2. [Modelo de Dados](): Estrutura do banco de dados no MySQL Workbench.
+3. [Base de Dados para Testes Reais](): Backup do banco de dados com dados reais.
+4. [Protótipo HTML/CSS/JavaScript](): Versão inicial da interface para visualização e testes.
+5. [Organização do Projeto em MVC](): Divisão do projeto segundo o padrão Model-View-Controller.
+6. [Camada Model (Padrão DAO)](): Lógica de acesso aos dados e operações no banco.
+7. [Camada View (Padrão HTML/CSS/JavaScript)](): Responsável pela interação com o usuário.
+8. [Camada Controller (Python/Flask)](): Lógica de negócios e comunicação entre Model e View.
+9. [Apresentação do Projeto (Slides)](): Resumo dos principais aspectos do projeto.
 
-<!-- Cada () deve conter o link para o respectivo arquivo -->
-
-1. [Plano de Projeto](): Documento que descreve a visão, escopo e estratégia do projeto, além dos papéis de cada integrante.
-
-2. [Modelo de Dados](): Desenvolvido no MySQL Workbench, representa a estrutura do banco de dados utilizado pelo sistema.
-
-3. [Base de Dados com Dados para Testes Reais](): Inclui um backup do banco de dados (.sql) com dados de teste real para a aplicação.
-
-4. [Protótipo em HTML/CSS/JavaScript](): Uma versão inicial da interface do sistema para visualização e testes.
-
-5. [Organização do Projeto Final em MVC](): Divisão do projeto de acordo com o padrão Model-View-Controller.
-
-6. [Camada Model (no Padrão DAO)](): Implementa a lógica de acesso aos dados e as operações de banco de dados.
-
-7. [Camada View final (no Padrão HTML/CSS/JavaScript)](): Responsável pela apresentação e interação com o usuário.
-
-8. [Camada Controller (em Python/Flask)](): Controla a lógica de negócios e a comunicação entre a camada Model e a View.
-
-9. [Apresentação do Projeto (Slides)](): Documento de apresentação que resume os principais aspectos do projeto.
-
+<!-- Imagem a ser adicionada em breve -->
 
 # Sobre o Projeto
 
-O projeto é uma aplicação web que permite aos usuários registrar ocorrências públicas de várias categorias, incluindo lixo, buracos em pistas, assaltos, bueiros sem proteção, placas danificadas, bancos danificados, calçadas danificadas, entre outros. Os usuários podem anexar fotos e vídeos às ocorrências e também datá-las.
+Este repositório GitHub contém o projeto final desenvolvido durante a disciplina de Programação Web, ministrada pelo professor Gilberto Hiragi. O principal objetivo do projeto foi a criação de um sistema web robusto para o registro, gerenciamento e análise de ocorrências em condomínios localizados em Sobradinho-DF.
+
+O sistema permite o registro detalhado de diferentes tipos de ocorrências, incluindo informações complementares, imagens e vídeos relevantes. Além disso, foram implementadas funcionalidades de pesquisa e visualização de ocorrências, permitindo a análise com base em diversos critérios, como tipo de ocorrência, localização geográfica, horário e outras características relevantes.
 
 ## Objetivos do Projeto
 
-- Desenvolver uma aplicação web eficiente e segura para registrar ocorrências públicas.
-- Permitir aos usuários o registro de várias categorias de ocorrências, incluindo detalhes, imagens e vídeos.
-- Oferecer funcionalidades de pesquisa e visualização de ocorrências baseadas em tipo, área, mapa e horário.
-- Facilitar a exportação de dados de ocorrências para formatos Excel, associando-as aos órgãos governamentais responsáveis.
+- Desenvolver uma aplicação web para registrar ocorrências públicas.
+- Armazenar registros de ocorrências em condomínios com data/hora, localização e documentação escrita e em mídia das ocorrências.
+- Oferecer funcionalidades de pesquisa especializadas para visualização de ocorrências detalhadas para os usuários pertencentes ao seu respectivo condomínio.
+- Disponibilizar painéis públicos comparativos de ocorrências, condomínios e condôminos/visitantes.
+
 
 ## Equipe do Projeto
 
-A equipe é composta por estudantes da Turma A da disciplina de Programação Web, sendo eles:
+A equipe é composta por alunos do 4º semestre do curso de Ciência da Computação do Centro Universitário de Brasília (UniCEUB), sendo eles:
 <div id="profiles" align="center">
-  
-  <!-- BASE PARA LINKAR PERFIL (coloquem em ordem alfabética!!)
-  <a href="https://github.com/username"><img src="https://img.shields.io/badge/GitHub-username-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  -->
-  
- <a href="https://github.com/apenasgabi"><img src="https://img.shields.io/badge/GitHub-apenasgabi-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/apenasgabi"><img src="https://img.shields.io/badge/GitHub-apenasgabi-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/brunnaruass"><img src="https://img.shields.io/badge/GitHub-brunnaruass-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-GabrielMousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a> <br>
-  <a href="https://github.com/Joaopato1"><img src="https://img.shields.io/badge/GitHub-Joaopato1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/Nathanmrl1"><img src="https://img.shields.io/badge/GitHub-Nathanmrl1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-gabrielmousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/Joaopato1"><img src="https://img.shields.io/badge/GitHub-joaopato1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/Nathanmrl1"><img src="https://img.shields.io/badge/GitHub-nathanmrl1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/yagoprssantos"><img src="https://img.shields.io/badge/GitHub-yagoprssantos-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-
 </div>
