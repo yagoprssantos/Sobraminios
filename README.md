@@ -1,58 +1,35 @@
-# Projeto Final - Sistema de Registro de Ocorrências
+# Branch SQL - Arquivos SQL do Banco de Dados
 
-<!-- É só uma base, não é pra fazer muuuuito sentido, então alterem como quiser -->
+Esta branch contém todos os arquivos SQL necessários para o gerenciamento do banco de dados do projeto sistema de registro de ocorrências em condomínios.
 
-## Visão Geral
+## Estrutura de Pastas e Arquivos
 
-Este repositório GitHub contém o projeto final da disciplina de Programação Web, ministrada pelo professor Gilberto Hiragi. O projeto se concentra no desenvolvimento de um sistema web para o registro e gerenciamento de ocorrências públicas.
+### Pasta Dumps
 
-## Estrutura do Projeto
+- **dump.sql**: Este arquivo contém um dump do banco de dados pronto para restauração. Ele inclui a estrutura do banco de dados juntamente com os dados, oferecendo uma cópia exata do estado do banco de dados em um determinado momento.
 
-O projeto é organizado em várias partes distintas, que incluem:
+### Pasta Scripts
 
-<!-- Cada () deve conter o link para o respectivo arquivo -->
+- **create_database.sql**: Script responsável pela criação do banco de dados `condominio_ocorrencias_db`. Contém as instruções SQL para criar as tabelas e suas relações conforme descrito na seção anterior.
 
-1. [Plano de Projeto](): Documento que descreve a visão, escopo e estratégia do projeto, além dos papéis de cada integrante.
+- **data_injection.sql**: Este arquivo contém scripts de injeção de dados iniciais para popular o banco de dados com informações de exemplo. Os dados inseridos podem ser utilizados para testes e demonstrações.
 
-2. [Modelo de Dados](): Desenvolvido no MySQL Workbench, representa a estrutura do banco de dados utilizado pelo sistema.
+## Utilização
 
-3. [Base de Dados com Dados para Testes Reais](): Inclui um backup do banco de dados (.sql) com dados de teste real para a aplicação.
+Para utilizar os arquivos contidos nesta branch, siga os seguintes passos:
 
-4. [Protótipo em HTML/CSS/JavaScript](): Uma versão inicial da interface do sistema para visualização e testes.
+1. **Restauração do Banco de Dados**:
+   - Utilize o arquivo `dump.sql` para restaurar o banco de dados com todas as estruturas de tabelas e dados. Você pode importar esse arquivo em um servidor MySQL usando um software como o MySQL Workbench ou através de comandos no terminal.
 
-5. [Organização do Projeto Final em MVC](): Divisão do projeto de acordo com o padrão Model-View-Controller.
+2. **Criação do Banco de Dados (se necessário)**:
+   - Execute o script `create_database.sql` para criar o banco de dados `condominio_ocorrencias_db` caso não esteja disponível.
 
-6. [Camada Model (no Padrão DAO)](): Implementa a lógica de acesso aos dados e as operações de banco de dados.
+3. **Injeção de Dados (opcional)**:
+   - Se desejar dados de exemplo, execute o script `data_injection.sql` para preencher as tabelas do banco de dados com informações fictícias.
 
-7. [Camada View final (no Padrão HTML/CSS/JavaScript)](): Responsável pela apresentação e interação com o usuário.
+## Importante
 
-8. [Camada Controller (em Python/Flask)](): Controla a lógica de negócios e a comunicação entre a camada Model e a View.
+- Certifique-se de ter um ambiente MySQL configurado e acessível para executar os scripts.
+- Antes de executar os scripts de criação ou injeção de dados em um ambiente de produção, faça um backup dos dados existentes para evitar perda de informações importantes.
 
-9. [Apresentação do Projeto (Slides)](): Documento de apresentação que resume os principais aspectos do projeto.
-
-
-# Sobre o Projeto
-
-O projeto é uma aplicação web que permite aos usuários registrar ocorrências públicas de várias categorias, incluindo lixo, buracos em pistas, assaltos, bueiros sem proteção, placas danificadas, bancos danificados, calçadas danificadas, entre outros. Os usuários podem anexar fotos e vídeos às ocorrências e também datá-las.
-
-## Objetivos do Projeto
-
-- Desenvolver uma aplicação web eficiente e segura para registrar ocorrências públicas.
-- Permitir aos usuários o registro de várias categorias de ocorrências, incluindo detalhes, imagens e vídeos.
-- Oferecer funcionalidades de pesquisa e visualização de ocorrências baseadas em tipo, área, mapa e horário.
-- Facilitar a exportação de dados de ocorrências para formatos Excel, associando-as aos órgãos governamentais responsáveis.
-
-## Equipe do Projeto
-
-A equipe é composta por estudantes da Turma A da disciplina de Programação Web, sendo eles:
-<div id="profiles" align="center">
-  
-  <!-- BASE PARA LINKAR PERFIL (coloquem em ordem alfabética!!)
-  <a href="https://github.com/username"><img src="https://img.shields.io/badge/GitHub-username-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  -->
-  
-  <a href="https://github.com/brunnaruass"><img src="https://img.shields.io/badge/GitHub-brunnaruass-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-GabrielMousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/yagoprssantos"><img src="https://img.shields.io/badge/GitHub-yagoprssantos-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-
-</div>
+Este README fornece uma visão geral dos arquivos SQL nesta branch. Se precisar de mais detalhes ou assistência, não hesite em contatar a equipe responsável pelo projeto.
