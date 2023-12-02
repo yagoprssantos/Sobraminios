@@ -21,9 +21,9 @@ O projeto é composto por várias seções:
 
 Além disso, para facilitar a visualização do projeto, foram criadas diversas branches com diferentes versões do projeto, sendo elas:
 
-1. [SQL](): Contém todos os arquivos SQL utilizados no Banco de Dados do projeto.
-2. [Frontend](): Contém não só o protótipo inicial, mas também a versão final do Frontend do projeto.
-3. [Backend](): Contém todos os arquivos relacionados ao Backend utilizados no projeto.
+1. [SQL](https://github.com/yagoprssantos/Sobraminios/tree/SQL): Contém todos os arquivos SQL utilizados no Banco de Dados do projeto.
+2. [Frontend](https://github.com/yagoprssantos/Sobraminios/tree/frontend): Contém não só o protótipo inicial, mas também a versão final do Frontend do projeto.
+3. [Backend](https://github.com/yagoprssantos/Sobraminios/tree/backend): Contém todos os arquivos relacionados ao Backend utilizados no projeto.
 
 <!-- Imagem a ser adicionada em breve -->
 
@@ -49,7 +49,7 @@ A equipe é composta por alunos do 4º semestre do curso de Ciência da Computa�
 <div id="profiles" align="center">
   <a href="https://github.com/apenasgabi"><img src="https://img.shields.io/badge/GitHub-apenasgabi-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/brunnaruass"><img src="https://img.shields.io/badge/GitHub-brunnaruass-blue?style=flat-squared&logo=github" alt="GitHub"></a>
-  <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-gabrielmousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/GabrielMousinho"><img src="https://img.shields.io/badge/GitHub-gabrielmousinho-blue?style=flat-squared&logo=github" alt="GitHub"></a> <br>
   <a href="https://github.com/Joaopato1"><img src="https://img.shields.io/badge/GitHub-joaopato1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/Nathanmrl1"><img src="https://img.shields.io/badge/GitHub-nathanmrl1-blue?style=flat-squared&logo=github" alt="GitHub"></a>
   <a href="https://github.com/yagoprssantos"><img src="https://img.shields.io/badge/GitHub-yagoprssantos-blue?style=flat-squared&logo=github" alt="GitHub"></a>
