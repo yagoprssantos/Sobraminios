@@ -5,6 +5,7 @@
 ## Visão Geral
 O projeto consiste em um sistema web funcional para registrar ocorrências em condomínios de Sobradinho-DF. Desenvolvido com Python, Flask, HTML, CSS, JavaScript e MySQL.
 
+
 ## Estrutura do Projeto
 O projeto é composto por várias seções:
 
@@ -18,13 +19,21 @@ O projeto é composto por várias seções:
 8. [Camada Controller (Python/Flask)](): Lógica de negócios e comunicação entre Model e View.
 9. [Apresentação do Projeto (Slides)](): Resumo dos principais aspectos do projeto.
 
+Além disso, para facilitar a visualização do projeto, foram criadas diversas branches com diferentes versões do projeto, sendo elas:
+
+1. [SQL](): Contém todos os arquivos SQL utilizados no Banco de Dados do projeto.
+2. [Frontend](): Contém não só o protótipo inicial, mas também a versão final do Frontend do projeto.
+3. [Backend](): Contém todos os arquivos relacionados ao Backend utilizados no projeto.
+
 <!-- Imagem a ser adicionada em breve -->
+
 
 # Sobre o Projeto
 
 Este repositório GitHub contém o projeto final desenvolvido durante a disciplina de Programação Web, ministrada pelo professor Gilberto Hiragi. O principal objetivo do projeto foi a criação de um sistema web robusto para o registro, gerenciamento e análise de ocorrências em condomínios localizados em Sobradinho-DF.
 
 O sistema permite o registro detalhado de diferentes tipos de ocorrências, incluindo informações complementares, imagens e vídeos relevantes. Além disso, foram implementadas funcionalidades de pesquisa e visualização de ocorrências, permitindo a análise com base em diversos critérios, como tipo de ocorrência, localização geográfica, horário e outras características relevantes.
+
 
 ## Objetivos do Projeto
 
