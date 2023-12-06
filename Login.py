@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_login import current_user, LoginManager, login_user, logout_user, login_required, UserMixin
 from model.dao import DAO
 import hashlib
+import datetime
 
 app = Flask(__name__)
 app.secret_key = 'digite aqui sua chave secreta ou adicione um token seguro'
@@ -13,18 +14,22 @@ login_manager.login_view = 'login'
 
 class User(UserMixin):
    id_usuario = 0
+   cpf_usuario = ''
+   nome_usuario = ''
    email_usuario = ''
 
    def to_json(self):
        return {
            "id_usuario": self.id_usuario,
-           "nome_usuario": self.username,
+           "cpf_usuario": self.cpf_usuario,
+           "nome_usuario": self.nome_usuario,
            "email_usuario": self.email_usuario}
 
    def get_id(self):
        return str(self.id_usuario)
 
 
+# Listagem dos usuários válidos
 @login_manager.user_loader
 def load_user(user_id):
    dao = DAO('tb_usuario')
@@ -39,15 +44,48 @@ def load_user(user_id):
        return None
 
 
-@app.route('/login', methods=['GET'])
+# Tela inicial
+@app.route('/homePage')
+
+
+# Tela com os Top 3
+@app.route('/condominiosPage')
+
+
+# Tela principal do condomínio
+@app.route('/condominioPage', methods=['GET'])
+
+
+# Inserir novo usuário (cadastro de login)
+@app.route('/createAcc', methods=['PUT'])
+def inserir():
+   daoUsr = DAO('tb_usuario')
+   objUsr = daoUsr.tb_usuario()
+   objUsr.cpf_usuario = request.args.get('cpf_usuario')
+   objUsr.nome_usuario = request.args.get('nome_usuario')
+   objUsr.email_usuario = request.args.get('email_usuario')
+   objUsr.senha_usuario = request.args.get('senha_usuario')
+   objUsr.cep_usuario = request.args.get('cep_usuario')
+   objUsr.telefone_usuario = request.args.get('telefone_usuario')
+   objUsr.condominio_id_fk = request.args.get('condominio_id_fk')
+
+
+   daoUsr.create(objUsr)
+
+   return jsonify({
+       'id_usuario': objUsr.id_usuario,
+   })
+
+
+# Login do usuário
+@app.route('/loginAcc', methods=['GET'])
 def login():
-   username = request.args.get('username')
-   password = request.args.get('password')
-   print(username, password)
+   usuario = request.args.get('usuario')
+   senha = request.args.get('senha')
+   print(usuario, senha)
    dao = DAO('tb_usuario')
-   lista = dao.readBy('nome_usuario', '==', username)
-   compilacao = hashlib.sha1(password.encode("utf-8")).hexdigest()
-   if len(lista) == 1 and lista[0].senha_usuario == compilacao:
+   lista = dao.readBy('nome_usuario', '==', usuario)
+   if len(lista) == 1 and lista[0].senha_usuario:
        usr = User()
        usr.id_usuario = str(lista[0].id_usuario)
        usr.username = lista[0].nome_usuario
@@ -63,17 +101,72 @@ def login():
            })
    else:
        return jsonify({"status": 401,
-                       "reason": "Username or Password Error"})
+                       "reason": "Erro de Login"})
 
 
+# Tela de "Esqueceu senha"
+@app.route('/senhaAcc', methods=['GET'])
+# Pegar email da tabela usuário (?)
+
+
+# Tela de logout (?)
 @app.route('/logout', methods=['GET'])
 def logout():
    logout_user()
    return jsonify(**{'result': 200,
-                     'data': {'message': 'logout success'}})
+                     'data': {'message': 'Logout feito com sucesso'}})
 
 
+# Tela "inicial" pós login
+@app.route('/start')
+@login_required
+
+
+# Tela para pesquisa de Condomínios
+@app.route('/startCond')
+@login_required
+
+
+# Tela de Condomínios logado no site
+@app.route('/infoCond')
+@login_required
+
+
+# Tela para pesquisa de Ocorrências
+@app.route('/startOcorr')
+@login_required
+
+
+# Tela de criação de Ocorrências
+@app.route('/optionsOcorr')
+@login_required
+
+
+# Tela de Ocorrências
+@app.route('/infoOcorr')
+@login_required
+
+
+# Tela para pesquisa de Usuários (ADM)
+@app.route('/startUsers')
+@login_required
+
+
+# Tela de Usuários (ADM)
+@app.route('/infoUsers')
+@login_required
+
+
+# Tela de edição de Usuários (ADM)
+@app.route('/editUsers')
+@login_required
+
+
+# **** PARTE AINDA NÃO INICIADA/REVISAR DAQUI PARA BAIXO****
+
+# Consultar
 @app.route('/consultar', methods=['GET'])
+# @login_required (?)
 def consultar():
    print(current_user.is_authenticated)
    if current_user.is_authenticated:
@@ -88,7 +181,7 @@ def consultar():
 @app.route('/pesquisar', methods=['GET'])
 @login_required
 def pesquisar():
-   idt = request.args.get('id')
+   id = request.args.get('id')
    dao = DAO('tb_usuario')
    usuario = dao.readById(id)
    if usuario is None:
@@ -100,33 +193,7 @@ def pesquisar():
            'email_usuario': usuario.email_usuario
        })
 
-# **** PARTE AINDA NÃO INICIADA/REVISAR DAQUI PARA BAIXO****
-
-# inserir novo usuário (cadastro de login)
-@app.route('/inserir', methods=['PUT'])
-@login_required
-def inserir():
-   daoGua = DAO('tb_guardiao')
-   objGua = daoGua.tb_guardiao()
-   objGua.cod_municipio = request.args.get('cod_municipio')
-   objGua.end_guardiao = request.args.get('end_guardiao')
-   objGua.usr_guardiao = request.args.get('usr_guardiao')
-   objGua.pwd_guardiao = request.args.get('pwd_guardiao')
-   daoPes = DAO("tb_pessoa")
-   objPes = daoPes.tb_pessoa()
-   objPes.cpf_pessoa = request.args.get('cpf_pessoa')
-   objPes.nme_pessoa = request.args.get('nme_pessoa')
-
-   daoGua.create(objGua)
-   objPes.idt_pessoa = objGua.idt_guardiao
-   daoPes.create(objPes)
-
-   return jsonify({
-       'idt_guardiao': objGua.idt_guardiao,
-       'idt_pessoa': objPes.idt_pessoa
-   })
-
-# apagar conta de usupario
+# apagar conta de usuário
 @app.route('/apagar', methods=['DELETE'])
 @login_required
 def apagar():
