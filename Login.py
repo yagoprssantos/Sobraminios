@@ -135,6 +135,13 @@ def logout():
 # Tela para pesquisa de Ocorrências
 @app.route('/startOcorr')
 @login_required
+def consultaOcorrencia():
+    dao = DAO("tb_ocorrencia")
+        lista = dao.readAll()
+        json = []
+        for i in lista:
+            json.append({"id": i.id_ocorrencia, "tipo": i.tipo_ocorrencia, "descricao": i.descricao_ocorrencia, "localizacao": i.localizacao_ocorrencia, "data": i.data_ocorrencia, "status": i.status_ocorrencia, "aprovacao": i.aprovacao_ocorrencia})
+        return jsonify(json)
 
 
 # Tela de criação de Ocorrências
