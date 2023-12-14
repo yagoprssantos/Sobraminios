@@ -9,15 +9,12 @@ O projeto consiste em um sistema web funcional para registrar ocorrências em co
 ## Estrutura do Projeto
 O projeto é composto por várias seções:
 
-1. [Plano de Projeto](): Visão, escopo e estratégia do projeto, além dos papéis dos membros.
-2. [Modelo de Dados](): Estrutura do banco de dados no MySQL Workbench.
-3. [Base de Dados para Testes Reais](): Backup do banco de dados com dados reais.
-4. [Protótipo HTML/CSS/JavaScript](): Versão inicial da interface para visualização e testes.
-5. [Organização do Projeto em MVC](): Divisão do projeto segundo o padrão Model-View-Controller.
-6. [Camada Model (Padrão DAO)](): Lógica de acesso aos dados e operações no banco.
-7. [Camada View (Padrão HTML/CSS/JavaScript)](): Responsável pela interação com o usuário.
-8. [Camada Controller (Python/Flask)](): Lógica de negócios e comunicação entre Model e View.
-9. [Apresentação do Projeto (Slides)](): Resumo dos principais aspectos do projeto.
+1. [Plano de Projeto](https://docs.google.com/document/d/1smLy_TrhrQMpRCyTDDAkod_O7zwnr7yd0qhJymwIeiA/edit?usp=sharing): Visão, escopo e estratégia do projeto, além dos papéis dos membros.
+2. [Modelo de Dados](https://github.com/yagoprssantos/Sobraminios/blob/main/Banco%20de%20Dados/Scripts/script_modelo.sql): Estrutura do banco de dados no MySQL Workbench.
+3. [Base de Dados para Testes Reais](https://github.com/yagoprssantos/Sobraminios/blob/main/Banco%20de%20Dados/Scripts/script_injection.sql): Backup do banco de dados com dados reais.
+4. [Protótipo HTML/CSS/JavaScript](https://www.figma.com/file/YAnd6GdkCdYe5P9tYR9hVL/Sobraminios?type=design&node-id=0%3A1&mode=design&t=7lWW7Opw72j5Dc9F-1): Versão inicial da interface para visualização e testes.
+5. [Camada Model (Padrão DAO)](https://github.com/yagoprssantos/Sobraminios/blob/main/Backend/DAO.py): Lógica de acesso aos dados e operações no banco.
+6. [Apresentação do Projeto (Slides)](): Resumo dos principais aspectos do projeto.
 
 Além disso, para facilitar a visualização do projeto, foram criadas diversas branches com diferentes versões do projeto, sendo elas:
 
