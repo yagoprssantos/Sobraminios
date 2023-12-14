@@ -14,7 +14,7 @@ O projeto é composto por várias seções:
 3. [Base de Dados para Testes Reais](https://github.com/yagoprssantos/Sobraminios/blob/main/Banco%20de%20Dados/Scripts/script_injection.sql): Backup do banco de dados com dados reais.
 4. [Protótipo HTML/CSS/JavaScript](https://www.figma.com/file/YAnd6GdkCdYe5P9tYR9hVL/Sobraminios?type=design&node-id=0%3A1&mode=design&t=7lWW7Opw72j5Dc9F-1): Versão inicial da interface para visualização e testes.
 5. [Camada Model (Padrão DAO)](https://github.com/yagoprssantos/Sobraminios/blob/main/Backend/DAO.py): Lógica de acesso aos dados e operações no banco.
-6. [Apresentação do Projeto (Slides)](): Resumo dos principais aspectos do projeto.
+6. [Apresentação do Projeto (Slides)](https://uniceubedu-my.sharepoint.com/:p:/g/personal/gabriela_ap_sempreceub_com/EVqkRWZutMpNl_kXt1Pi2QQBkeYIG1oRgnE8uQNzmLpi1w?e=VOdXT1): Resumo dos principais aspectos do projeto.
 
 Além disso, para facilitar a visualização do projeto, foram criadas diversas branches com diferentes versões do projeto, sendo elas:
 
